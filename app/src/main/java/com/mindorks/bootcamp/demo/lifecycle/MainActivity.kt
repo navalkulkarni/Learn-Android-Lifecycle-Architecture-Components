@@ -15,17 +15,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        timerToast = TimerToast(application)
-        timerToast.start()
+        timerToast = TimerToast(application,this)
     }
 
-    /**
-     * STAGE 2: use lifecycle callbacks to stop the timer
-     * even this will keep the toast showing when
-     * the app is in the background
-     */
-    override fun onDestroy() {
-        super.onDestroy()
-        timerToast.stop()
-    }
+
 }
